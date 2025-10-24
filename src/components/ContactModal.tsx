@@ -33,7 +33,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     const formData = new FormData(form)
 
     try {
-      const response = await fetch('https://formsubmit.co/artemlend@gmail.com', {
+      const response = await fetch('https://formsubmit.co/eugene@hubblegate.com', {
         method: 'POST',
         body: formData,
       })
@@ -98,6 +98,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <form onSubmit={handleSubmit} className={styles.form}>
                 {/* Hidden fields for FormSubmit configuration */}
                 <input type="hidden" name="_subject" value="New contact from Hubble Gate" />
+                <input type="hidden" name="_cc" value="duke@hubblegate.com" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
 

@@ -1,6 +1,10 @@
+import { useState } from 'react'
+import { ContactModal } from './ContactModal'
 import styles from './CTA.module.css'
 
 export function CTA() {
+  const [modalOpen, setModalOpen] = useState(false)
+  
   return (
     <section className={styles.cta}>
          <img
@@ -27,9 +31,11 @@ export function CTA() {
               friction, and enhance transaction success rates with our all-in-one platform.
             </p>
           </div>
-          <button className={styles.button}>Contact us</button>
+          <button onClick={() => setModalOpen(true)} className={styles.button}>Contact us</button>
         </div>
       </div>
+
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }

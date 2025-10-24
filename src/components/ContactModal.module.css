@@ -1,0 +1,406 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(20, 24, 28, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0;
+  overflow-y: auto;
+  animation: backdropFadeIn 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .backdrop {
+    align-items: center;
+    padding: 1rem;
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: relative;
+  background: rgba(211, 210, 239, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(248, 249, 255, 0.1);
+  border-radius: 32px 32px 0 0;
+  max-width: 100%;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 0 40px rgba(199, 248, 84, 0.1),
+    0 -20px 60px rgba(20, 24, 28, 0.5),
+    inset 0 1px 0 rgba(248, 249, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    border-radius: 40px;
+    max-width: 600px;
+    max-height: none;
+    animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 
+      0 0 60px rgba(199, 248, 84, 0.15),
+      0 30px 80px rgba(20, 24, 28, 0.6),
+      inset 0 1px 0 rgba(248, 249, 255, 0.15);
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Moon decoration */
+.moonDecoration {
+  position: absolute;
+  left: -150px;
+  top: -150px;
+  width: 400px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 0;
+  animation: moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 20px rgba(199, 248, 84, 0.3));
+  }
+  50% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 40px rgba(199, 248, 84, 0.5));
+  }
+}
+
+@media (min-width: 640px) {
+  .moonDecoration {
+    right: -100px;
+    top: -100px;
+    width: 450px;
+    opacity: 0.4;
+  }
+  
+  @keyframes moonGlow {
+    0%, 100% {
+      opacity: 0.4;
+      filter: drop-shadow(0 0 30px rgba(199, 248, 84, 0.4));
+    }
+    50% {
+      opacity: 0.5;
+      filter: drop-shadow(0 0 50px rgba(199, 248, 84, 0.6));
+    }
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(248, 249, 255, 0.1);
+  border: none;
+  color: #f8f9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+}
+
+.closeButton:hover {
+  background-color: rgba(248, 249, 255, 0.15);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 0 20px rgba(248, 249, 255, 0.2);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .content {
+    padding: 3rem 3rem;
+  }
+}
+
+.title {
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #f8f9ff;
+  margin: 0 0 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 1rem;
+  }
+}
+
+.subtitle {
+  font-family: 'Metropolis', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 14px;
+  line-height: 20px;
+  color: #d3d2ef;
+  margin: 0 0 2rem;
+}
+
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 2.5rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .form {
+    gap: 2rem;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 12px;
+  font-weight: 400;
+  color: #f8f9ff;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 640px) {
+  .label {
+    font-size: 14px;
+  }
+}
+
+.input,
+.textarea {
+  /* width: 100%; */
+  padding: 14px 18px;
+  background: rgba(248, 249, 255, 0.05);
+  border: 1px solid rgba(248, 249, 255, 0.15);
+  border-radius: 16px;
+  font-family: 'Metropolis', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 14px;
+  line-height: 20px;
+  color: #f8f9ff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+@media (min-width: 640px) {
+  .input,
+  .textarea {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(211, 210, 239, 0.5);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #c7f854;
+  background: rgba(248, 249, 255, 0.08);
+  box-shadow: 
+    0 0 0 3px rgba(199, 248, 84, 0.1),
+    0 0 20px rgba(199, 248, 84, 0.15);
+  transform: translateY(-2px);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px 40px;
+  background-color: #c7f854;
+  color: #14181c;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.submitButton:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+@media (min-width: 640px) {
+  .submitButton {
+    font-size: 18px;
+    padding: 18px 40px;
+  }
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #d4ff6b;
+  transform: translateY(-3px);
+  box-shadow: 
+    0 10px 30px rgba(199, 248, 84, 0.4),
+    0 0 40px rgba(199, 248, 84, 0.2);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success state */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.successIcon {
+  margin-bottom: 1.5rem;
+  animation: successScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 0 20px rgba(199, 248, 84, 0.5));
+}
+
+@keyframes successScale {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #c7f854;
+  margin: 0 0 1rem;
+  animation: successTitleGlow 2s ease-in-out infinite;
+}
+
+@keyframes successTitleGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(199, 248, 84, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(199, 248, 84, 0.6);
+  }
+}
+
+@media (min-width: 640px) {
+  .successTitle {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.successText {
+  font-family: 'Metropolis', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 14px;
+  line-height: 20px;
+  color: #d3d2ef;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .successText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

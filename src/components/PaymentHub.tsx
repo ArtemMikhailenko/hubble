@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { ContactModal } from './ContactModal'
 import styles from './PaymentHub.module.css'
 
 const stats = [
@@ -27,6 +29,8 @@ const comingSoon = [
 ]
 
 export function PaymentHub() {
+  const [modalOpen, setModalOpen] = useState(false)
+  
   return (
     <section className={styles.paymentHub}>
       <div className={styles.container}>
@@ -85,9 +89,9 @@ export function PaymentHub() {
               <br />
               contact us and we will consider its integration.
             </p>
-            <a href="#contact" className={styles.cta}>
+            <button onClick={() => setModalOpen(true)} className={styles.cta}>
               Contact us
-            </a>
+            </button>
           </div>
 
           {/* Right column */}
@@ -110,6 +114,8 @@ export function PaymentHub() {
           </div>
         </div>
       </div>
+
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }

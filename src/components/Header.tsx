@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from './Link'
+import { ContactModal } from './ContactModal'
 import styles from './Header.module.css'
 
 /**
@@ -10,6 +11,8 @@ import styles from './Header.module.css'
  */
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -25,9 +28,9 @@ export function Header() {
               <Link href="#about">About us</Link>
               <Link href="#careers">Careers</Link>
             </div>
-            <a href="#contact" className={styles.cta}>
+            <button onClick={() => setModalOpen(true)} className={styles.cta}>
               Contact us
-            </a>
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -77,9 +80,15 @@ export function Header() {
             <a href="#privacy" onClick={() => setOpen(false)}>Privacy</a>
           </div>
 
-          <a href="#contact" className={styles.mobileCta} onClick={() => setOpen(false)}>
+          <button 
+            onClick={() => {
+              setOpen(false)
+              setModalOpen(true)
+            }} 
+            className={styles.mobileCta}
+          >
             Contact us
-          </a>
+          </button>
 
           {/* Social icons */}
           <div className={styles.mobileSocial}>
@@ -101,6 +110,8 @@ export function Header() {
           </div>
         </div>
       </div>
+
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </header>
   )
 }

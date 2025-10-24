@@ -64,7 +64,7 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1440px;
-  padding: 4rem 1.5rem 5rem;
+  padding: 2.5rem 1.5rem 3rem;
 }
 
 @media (min-width: 640px) {
@@ -159,7 +159,7 @@
   font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   font-size: 16px;
   line-height: 20px;
-  min-width: 220px;
+  max-width: 200px;
   font-weight: 400;
   color: #14181c;
   text-decoration: none;
@@ -170,6 +170,7 @@
   .cta {
     padding: 16px 40px;
     font-size: 24px;
+    min-width: 220px;
   }
 }
 

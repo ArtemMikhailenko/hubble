@@ -1,0 +1,276 @@
+.header {
+  position: relative;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #f8f9ff;
+  text-decoration: none;
+}
+
+.logoText {
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 195px;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 195px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  background-color: #c7f854;
+  padding: 16px 40px;
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #14181c;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background-color: #d4ff6d;
+}
+
+.cta:focus-visible {
+  outline: 2px solid #c7f854;
+  outline-offset: 2px;
+}
+
+.mobileMenuButton {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #f8f9ff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mobileMenuButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: #d3d2ef;
+  opacity: 0.2;
+}
+
+.mobilePanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #14181c;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.mobilePanel.open {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .mobilePanel {
+    display: none !important;
+  }
+}
+
+.mobileContent {
+  padding: 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.mobileCloseButton {
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #f8f9ff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mobileCloseButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 80px;
+  flex: 1 1 auto;
+  /* justify-content: center; */
+  align-items: flex-start;
+  min-height: 0;
+  max-height: 300px;
+}
+
+.mobileLinks a {
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #f8f9ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobileLinks a:hover {
+  color: #c7f854;
+}
+
+.mobileCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: #c7f854;
+  padding: 10px 40px;
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #14181c;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  margin-bottom: 1.5rem;
+}
+
+.mobileCta:hover {
+  background-color: #d4ff6d;
+}
+
+.mobileSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 6rem;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.socialIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f8f9ff;
+  color: #14181c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.socialIcon:hover {
+  background-color: #c7f854;
+  transform: translateY(-2px);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind v4: keep globals lean and push most styling into utilities */
+:root {
+  --bg: #000; /* page background */
+  --fg: #f8f9ff; /* primary foreground */
+  --muted: #d3d2ef; /* secondary text, dividers */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: 'Unbounded', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Better default focus style */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #c7f854;
+  outline-offset: 2px;
+}

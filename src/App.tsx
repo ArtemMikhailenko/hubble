@@ -1,11 +1,11 @@
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Stats } from './components/Stats'
-import { Features } from './components/Features'
-import { PaymentHub } from './components/PaymentHub'
-import { Integration } from './components/Integration'
-import { CTA } from './components/CTA'
-import { Footer } from './components/Footer'
+import { Header } from './components/header/Header'
+import { Hero } from './components/hero/Hero/Hero'
+import { Stats } from './components/hero/Stats/Stats'
+import { Features } from './components/hero/Features/Features'
+import { PaymentHub } from './components/hero/PaymentHub/PaymentHub'
+import { Integration } from './components/hero/Integration/Integration'
+import { CTA } from './components/hero/CTA/CTA'
+import { Footer } from './components/footer/Footer'
 
 function App() {
   return (

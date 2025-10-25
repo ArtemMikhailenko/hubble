@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ContactModal } from './ContactModal'
+import { ContactModal } from '../ContactModal/ContactModal'
 import styles from './Hero.module.css'
 
 export function Hero() {

@@ -5,12 +5,12 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <nav className={styles.nav}>
-          <a href="#about" className={styles.link}>
+          {/* <a href="#about" className={styles.link}>
             About us
           </a>
           <a href="#careers" className={styles.link}>
             Careers
-          </a>
+          </a> */}
         </nav>
 
         <div className={styles.logo}>HUBBLE GATE</div>

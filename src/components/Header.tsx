@@ -25,8 +25,8 @@ export function Header() {
           {/* Desktop nav */}
           <nav aria-label="Primary" className={styles.nav}>
             <div className={styles.navLinks}>
-              <Link href="#about">About us</Link>
-              <Link href="#careers">Careers</Link>
+              {/* <Link href="#about">About us</Link>
+              <Link href="#careers">Careers</Link> */}
             </div>
             <button onClick={() => setModalOpen(true)} className={styles.cta}>
               Contact us
@@ -75,8 +75,8 @@ export function Header() {
           </div>
 
           <div className={styles.mobileLinks}>
-            <a href="#about" onClick={() => setOpen(false)}>About us</a>
-            <a href="#careers" onClick={() => setOpen(false)}>Careers</a>
+            {/* <a href="#about" onClick={() => setOpen(false)}>About us</a>
+            <a href="#careers" onClick={() => setOpen(false)}>Careers</a> */}
             <a href="#privacy" onClick={() => setOpen(false)}>Privacy</a>
           </div>
 
